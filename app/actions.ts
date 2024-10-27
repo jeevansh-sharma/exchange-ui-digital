@@ -2,11 +2,11 @@
 import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server';
 import {z} from 'zod'
 import prisma from './lib/db';
-import { error } from 'console';
+
 import { CategoryType } from '@prisma/client';
 import { stripe } from './lib/stripe';
 import { redirect } from 'next/navigation';
-import localFont from 'next/font/local';
+
 
 export type State={
     status: "error"|"success"|undefined,
