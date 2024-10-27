@@ -152,8 +152,8 @@ export async function BuyProduct(formData: FormData){
                 destination: data?.user?.connectedAccountId as string
              }
         },
-        success_url:"http://localhost:3000/payment/success",
-        cancel_url: "http://localhost:3000/payment/cancel",
+        success_url:process.env.NODE_ENV==="development" ? "http://localhost:3000/payment/success": "https://exchange-ui-digital.vercel.app/payment/success" ,
+        cancel_url: process.env.NODE_ENV==="development" ? "http://localhost:3000/payment/cancel": "https://exchange-ui-digital.vercel.app/payment/cancel" ,
         
     });
     return redirect(session.url as string);
@@ -178,8 +178,9 @@ export async function UserAccountAction(){
 
     const accountLink = await stripe.accountLinks.create({
         account: data?.connectedAccountId as string,
-        refresh_url: "http://localhost:3000/billing",
-        return_url: `http://localhost:3000/return/${data?.connectedAccountId}`,
+        refresh_url: process.env.NODE_ENV==="development" ? "http://localhost:3000/billing": "https://exchange-ui-digital.vercel.app/billing" ,
+        return_url:  process.env.NODE_ENV==="development" ? `http://localhost:3000/return/${data?.connectedAccountId}`: `https://exchange-ui-digital.vercel.app/return/${data?.connectedAccountId}` 
+          ,
         type: 'account_onboarding'
     })
     return redirect(accountLink.url);
