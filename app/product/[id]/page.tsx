@@ -2,11 +2,12 @@ import { BuyProduct } from "@/app/actions";
 import { ProductDescription } from "@/app/components/ProductDescription";
 import { BuyButton } from "@/app/components/SubmitButton";
 import prisma from "@/app/lib/db";
-import { Button } from "@/components/ui/button";
+
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
+
 import { JSONContent } from "@tiptap/react";
 import Image from "next/image";
+import { unstable_noStore as noStore } from "next/cache";
 
 async function getData(id:string){
     const data= prisma.product.findUnique({
@@ -42,8 +43,8 @@ export default async function ProductPage({params,}:{
         
     }
 }){
-    const {getUser}=getKindeServerSession();
-    const user = await getUser();
+
+    noStore();
     const data= await getData(params.id);
 
     return(

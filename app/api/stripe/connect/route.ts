@@ -1,7 +1,6 @@
 import prisma from "@/app/lib/db";
 import { stripe } from "@/app/lib/stripe";
-import { error } from "console";
-import { sign } from "crypto";
+
 import { headers } from "next/headers";
 
 export async function POST(req:Request){

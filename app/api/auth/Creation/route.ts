@@ -2,11 +2,12 @@ import prisma from "@/app/lib/db";
 import { stripe } from "@/app/lib/stripe";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { error } from "console";
-import { Users } from "lucide-react";
-import { redirect } from "next/dist/server/api-utils";
+
 import { NextResponse } from "next/server";
+import {unstable_noStore as no_store} from "next/cache"
 
 export async function GET(){
+    no_store();
     const {getUser}=getKindeServerSession();
     const user = await getUser();
 

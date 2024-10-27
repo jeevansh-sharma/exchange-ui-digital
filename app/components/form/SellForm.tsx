@@ -1,5 +1,5 @@
 "use client"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import {  CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 
@@ -13,7 +13,7 @@ import { useFormState } from "react-dom";
 
 import { toast } from "sonner";
 
-import { redirect } from "next/navigation";
+
 import { SellProduct, State } from "@/app/actions";
 import { CategoryList } from "../CategoryList";
 import { TipTapEditor } from "../Editor";

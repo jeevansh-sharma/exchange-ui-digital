@@ -1,8 +1,6 @@
 import Link from "next/link";
 import prisma from "../lib/db"
 import { ProductCard } from "./ProductCard";
-import { Carousel } from "@/components/ui/carousel";
-import { CardContent } from "@/components/ui/card";
 
 
 

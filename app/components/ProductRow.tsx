@@ -1,12 +1,10 @@
 import Link from "next/link";
 import prisma from "../lib/db"
 import { LoadingPageHeading, ProductCard } from "./ProductCard";
-import { Carousel } from "@/components/ui/carousel";
-import { CardContent } from "@/components/ui/card";
-import { Database } from "lucide-react";
-import { NOTFOUND } from "dns/promises";
+
+
 import { notFound } from "next/navigation";
-import { CategoryType } from "@prisma/client";
+
 import { Suspense } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
 
