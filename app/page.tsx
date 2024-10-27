@@ -1,5 +1,4 @@
-import { NewwestProducts } from "./components/NewestProducts";
-import { ProductCard } from "./components/ProductCard";
+
 import { ProductRow } from "./components/ProductRow";
 
 export default function Home() {

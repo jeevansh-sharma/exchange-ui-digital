@@ -96,7 +96,7 @@ export async function SettingPage(prevState: any,formData:FormData){
         }
         return state;
     }
-    const data = await prisma.user.update({
+    const _data = await prisma.user.update({
         where:{
             id: user.id,
         },
@@ -185,7 +185,7 @@ export async function UserAccountAction(){
     return redirect(accountLink.url);
 }
 
-export async function GetStripeDashboard(formData:FormData){
+export async function GetStripeDashboard(_formData:FormData){
     const {getUser} = getKindeServerSession();
     const user= await getUser();
 

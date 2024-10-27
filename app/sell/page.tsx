@@ -33,7 +33,7 @@ export default async function SellRoute(){
         
     
    }
-   const data= await getData(user.id);
+   const _data= await getData(user.id);
    
     return (
         <section className="mx-w-7xl mx-auto px-4 md:px-8 mb-14">

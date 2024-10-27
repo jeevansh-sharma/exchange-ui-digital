@@ -87,7 +87,7 @@ export function SellForm(){
                     ]);
                     toast.success('your images are uploaded')
                 }}  
-                onUploadError={(error:Error)=>{
+                onUploadError={(_error:Error)=>{
                     toast.error("your images are not uploaded")
                 }}
                 
@@ -102,7 +102,7 @@ export function SellForm(){
                      setProductFile(res[0].url)
                      toast.success('your files are uploaded')
                 }}
-                onUploadError={(error:Error)=>{
+                onUploadError={(_error:Error)=>{
                     toast.error("your files are not uploaded")
                 }}
                 />

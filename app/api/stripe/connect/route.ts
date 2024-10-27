@@ -15,14 +15,14 @@ export async function POST(req:Request){
             signature,
             process.env.STRIPE_CONNECT_WEBHOOK_SECRET as string
         )
-     } catch (error: unknown) {
+     } catch (_error: unknown) {
         return new Response("webhook error",{status:400})
      }
 
     switch (event.type) {
         case "account.updated":
             const account = event.data.object
-            const data= await prisma.user.update({
+            const _data= await prisma.user.update({
                 where:{
                   connectedAccountId:  account.id, 
                 },
