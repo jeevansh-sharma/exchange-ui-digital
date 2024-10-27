@@ -1,6 +1,6 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import {Editor, EditorContent, isActive, JSONContent, useEditor} from "@tiptap/react"
+import {Editor, EditorContent,  JSONContent, useEditor} from "@tiptap/react"
 import StarterKit from "@tiptap/starter-kit"
 export const Menu=({editor}:{editor:Editor|null})=>{
     if(!editor){
